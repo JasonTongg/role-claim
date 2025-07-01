@@ -1,0 +1,3 @@
+[submodule "cyfrin/foundry-defi-stablecoin-f23/lib/forge-std"]
+	path = cyfrin/foundry-defi-stablecoin-f23/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
