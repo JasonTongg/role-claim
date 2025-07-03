@@ -7,6 +7,7 @@ import "../app/globals.css";
 import Image from "next/image";
 import Wallet from "../public/walleet.png";
 import Logo from "../public/Logo2.webp";
+import Head from "next/head";
 
 const SuccessPage = () => {
   const [address, setAddress] = useState(null);
@@ -73,23 +74,16 @@ const SuccessPage = () => {
     const newBalances = {};
 
     for (const c of contractAddresses) {
-      console.log("masuk")
       const contract = new ethers.Contract(c, ERC721_ABI, prov);
       try {
         const bal = await contract.balanceOf(addr);
         newBalances[c] = bal.toString();
-        console.log(`Balance of ${addr} in contract ${c}:`, bal.toString());
       } catch (err) {
-        console.error("Error fetching balance for", c, err);
         newBalances[c] = "0";
       }
     }
     setBalances(newBalances);
   }
-
-  useEffect(() => {
-    console.log("Balances updated:", balances);
-  }, [balances])
 
   useEffect(() => {
     if (address) {
@@ -148,7 +142,6 @@ const SuccessPage = () => {
     });
 
     if (res.ok) {
-      console.log("✅ Role granted successfully!");
       toast.success("✅ Role granted successfully!");
     } else {
       let err = await res.json();
@@ -159,6 +152,9 @@ const SuccessPage = () => {
 
   return (
     <div className="bg-bg">
+      <Head>
+        <title>Jikuna Role</title>
+      </Head>
       <video autoPlay loop muted playsInline className="bg-video">
         <source src="./background2.webm" type="video/webm" />
       </video>

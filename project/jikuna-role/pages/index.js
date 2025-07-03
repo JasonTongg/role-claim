@@ -5,10 +5,14 @@ import "../app/globals.css";
 import Image from "next/image";
 import Discord from "../public/discord.png";
 import Logo from "../public/Logo2.webp";
+import Head from "next/head";
 
 const HomePage = () => {
 	return (
 		<div className="bg-bg">
+			<Head>
+				<title>Jikuna Role</title>
+			</Head>
 			<video autoPlay loop muted playsInline className="bg-video">
 				<source src="./background2.webm" type="video/webm" />
 			</video>
