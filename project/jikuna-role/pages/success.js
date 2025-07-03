@@ -5,7 +5,6 @@ import { ethers, BrowserProvider } from "ethers";
 import { ToastContainer, toast } from "react-toastify"
 import "../app/globals.css";
 import Image from "next/image";
-import Wallet from "../public/walleet.png";
 import Logo from "../public/Logo2.webp";
 import Head from "next/head";
 
@@ -180,7 +179,7 @@ const SuccessPage = () => {
                 justifyContent: "center",
                 gap: "10px",
               }}>
-                <Image src={Wallet} className="wallet-icon" alt="Wallet Icon" />
+                <Image src="/walleet.png" className="wallet-icon" alt="Wallet Icon" />
                 <strong className="btn-btn">{address.substring(0, 7)}...{address.substr(-5)}</strong>
               </div>
             </>

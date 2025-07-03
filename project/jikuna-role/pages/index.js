@@ -3,7 +3,6 @@ import React from "react";
 import DiscordLogin from "../components/DiscordLogin";
 import "../app/globals.css";
 import Image from "next/image";
-import Discord from "../public/discord.png";
 import Logo from "../public/Logo2.webp";
 import Head from "next/head";
 
@@ -26,7 +25,7 @@ const HomePage = () => {
 				}}
 			></Image>
 			<div className="container">
-				<Image src={Discord}
+				<Image src="/discord.png"
 					alt="Discord Logo"
 					width={100}
 					height={100}
