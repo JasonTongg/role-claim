@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 		client_secret: process.env.DISCORD_CLIENT_SECRET,
 		grant_type: "authorization_code",
 		code,
-		redirect_uri: "http://localhost:3000/api/auth/discord/callback",
+		redirect_uri: process.env.DISCORD_REDIRECT_URI,
 		scope: "identify",
 	});
 

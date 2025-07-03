@@ -17,9 +17,10 @@ const DiscordLogin = () => {
 				color: "#fff",
 				borderRadius: "5px",
 				textDecoration: "none",
+				borderRadius: "30px",
 			}}
 		>
-			Login with Discord
+			Connect Discord
 		</a>
 	);
 };
