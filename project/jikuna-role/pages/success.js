@@ -218,12 +218,12 @@ const SuccessPage = () => {
             <div className="container container-2">
               <h1 style={{ margin: "0px", fontSize: "1.2rem" }}>Litor Holder</h1>
               <p>A role assigned to those who hold at least 3 Jikuna Little Origins NFTs.</p>
-              <button disabled={balances["0x874df014adc21d0f76c706b2f58b069487a6d71d"] < 2} className="btn-btn" onClick={getRoleLior}>Claim Role</button>
+              <button disabled={balances["0x874df014adc21d0f76c706b2f58b069487a6d71d"] < 3} className="btn-btn" onClick={getRoleLior}>Claim Role</button>
             </div>
             <div className="container container-2">
               <h1 style={{ margin: "0px", fontSize: "1.2rem" }}>Specialist</h1>
               <p>This role can be claimed by eligible holders of both 1 Jikupass and 3 Jikuna Little Origin NFTs.</p>
-              <button disabled={balances["0x66bfe7c5c2dc052492938a9f7d50251a47b375ef"] < 1 || balances["0x874df014adc21d0f76c706b2f58b069487a6d71d"] < 2} className="btn-btn" onClick={getRoleSpecialis}>Claim Role</button>
+              <button disabled={balances["0x66bfe7c5c2dc052492938a9f7d50251a47b375ef"] < 1 || balances["0x874df014adc21d0f76c706b2f58b069487a6d71d"] < 3} className="btn-btn" onClick={getRoleSpecialis}>Claim Role</button>
             </div>
           </div>
         )
