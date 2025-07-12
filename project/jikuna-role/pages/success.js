@@ -23,8 +23,21 @@ const SuccessPage = () => {
     "function balanceOf(address owner) view returns (uint256)"
   ];
 
+  const checkAndConnectWallet = async () => {
+    if (typeof window === 'undefined') return;
+
+    if (!window.ethereum?.isMetaMask) {
+      toast.error("MetaMask is not installed");
+      return;
+    }
+  }
+
+  useEffect(() => {
+    checkAndConnectWallet();
+  }, []);
+
   async function init() {
-    if (!window.ethereum) return;
+    checkAndConnectWallet();
     try {
       const prov = new ethers.BrowserProvider(window.ethereum);
       await window.ethereum.request({ method: "eth_requestAccounts" });
@@ -41,6 +54,7 @@ const SuccessPage = () => {
   }
 
   async function switchToMonad() {
+    checkAndConnectWallet();
     try {
       await window.ethereum.request({
         method: "wallet_addEthereumChain",
@@ -179,7 +193,7 @@ const SuccessPage = () => {
                 justifyContent: "center",
                 gap: "10px",
               }}>
-                <Image src="/walleet.png" className="wallet-icon" alt="Wallet Icon" />
+                <Image src="/walleet.png" className="wallet-icon" alt="Wallet Icon" width="100" height="100" />
                 <strong className="btn-btn">{address.substring(0, 7)}...{address.substr(-5)}</strong>
               </div>
             </>
@@ -228,7 +242,7 @@ const SuccessPage = () => {
           </div>
         )
       }
-    </div>
+    </div >
   );
 };
 
